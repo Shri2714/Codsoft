@@ -1,1 +1,45 @@
+def add(x,y):
+    return x+y
+def subtract (x,y):
+    return x-y
+def multiply (x,y):
+    return x*y
+def divide (x,y):
+    if y !=0:
+        return x/y
+    else:
+        return "Error!"
+def main():
+    print("Choose any operation to help you!!") 
+    print("1.ADDITION")
+    print("2.SUBTRACTION")   
+    print("3.MULTIPLICATION")
+    print("4.DIVISION")
+
+    while True:
+        try:
+            c=input("ENTER OPERATION TYPE(1/2/3/4):")
+            if c in ['1','2','3','4']:
+             n1=float(input("ENTER FIRST NUMBER:"))
+             n2=float(input("ENTER SECOND NUMBER:"))
+
+             if c=='1':
+                 print(f'{n1}+{n2}={add(n1,n2)}')
+             elif c=='2':
+                 print(f'{n1}-{n2}={subtract(n1,n2)}')
+             elif c=='3':
+                 print(f'{n1}*{n2}={multiply(n1,n2)}')
+             elif c=='4':
+                 result=divide(n1,n2) 
+                 print(f'{n1}/{n2}={result}')
+            c1=input("DO YOU WANT TO PERFORM NEXT CALCULATION?(YES/NO)")
+            if c1.lower()!='yes':
+                  break
+            else:
+             print("INVALID INPUT.PLEASE ENTER A NUMBER BETWEEN 1 TO 4")
+        except ValueError:
+            print("INVALID INPUT.PLEASE ENTER NUMERIC VALUES")
+if __name__=='__main__':
+    main()
+
 
